@@ -48,7 +48,7 @@ def res():
     waveFile.writeframes(b''.join(frames))
     waveFile.close()
 
-    servicio = SpeechToTextV1(iam_apikey ='OOeriH0WxW3wBRZN-yDxnMDVv9psXv-IbUp-sn53rjZ9') 
+    servicio = SpeechToTextV1(iam_apikey ='id de watson') 
     with open('graba.wav','rb') as fichero:
 
 
@@ -65,7 +65,7 @@ def res():
     #----------------------------------------traduccion----------------------------------------------
     language_translator = LanguageTranslatorV3(
     version='2018-05-01',
-    iam_apikey='7cEueFyXfs4saKfm1SfN4xtoxdBgzCIsrO0QFR-9Cbip',
+    iam_apikey='id de watson',
     url='https://gateway.watsonplatform.net/language-translator/api')
     
     translation = language_translator.translate(
@@ -80,7 +80,7 @@ def res():
     print(traduccion)
     traduccion1=traduccion
     ##-----------------------------------------------analizador
-    tone_analyzer = ToneAnalyzerV3(version = '2017-09-21',iam_apikey = 'lRCEug4lLvSja-Ob6qpnk-to0mAkPu56827xh63SmacD', url = 'https://gateway.watsonplatform.net/tone-analyzer/api'  )
+    tone_analyzer = ToneAnalyzerV3(version = '2017-09-21',iam_apikey = 'id de watson, url = 'https://gateway.watsonplatform.net/tone-analyzer/api'  )
     analizar = tone_analyzer.tone( {'text':traduccion}, content_type='application/json').get_result()
     ton=json.dumps(analizar, indent=2, ensure_ascii=False)
     print(ton)
@@ -109,7 +109,7 @@ def res():
     traduccion2= traduccion
     #-------------------------text to speech
     text_to_speech = TextToSpeechV1(
-    iam_apikey='I3L8EDCMNVmp-O-l-PAjBRIvL-5GMvkTVOFdDp26rIuQ',
+    iam_apikey='id de watson',
     url='https://stream.watsonplatform.net/text-to-speech/api'
     )
 
